@@ -5,6 +5,7 @@ library(tidyverse)
 
 
 # Figure 1:
+
 growth <- read_excel("data/HODP_project.xlsx", 
                       sheet = "endowment_growth")
 
@@ -18,9 +19,11 @@ ggplot(growth, aes(x = average_returns, y = "Returns")) +
   scale_x_continuous(limits = c(1, 1.08), 
                      breaks = c(1, 1.02, 1.04, 1.06, 1.08),
                      labels = c("0%", "2%", "4%", "6%", "8%"))
+
 grid::grid.raster(logo, x = 0, y = 0, just = c('left', 'bottom'), width = unit(1, 'cm'))
 
 # Figure 2:
+
 library(ggrepel)
 
 returns_ivy_plus <- read_excel("data/HODP_project.xlsx", 
@@ -54,6 +57,7 @@ grid::grid.raster(logo, x = 0, y = 0, just = c('left', 'bottom'), width = unit(1
 
 
 # Figure 3:
+
 ggplot(data = returns_ivy_plus, 
        aes(x = stdev, y = average_returns, label = institution)) +
   geom_point() +
@@ -72,6 +76,7 @@ ggplot(data = returns_ivy_plus,
 grid::grid.raster(logo, x = 0.01, y = 0.01, just = c('left', 'bottom'), width = unit(1, 'cm'))
 
 # Figure 4:
+
 asset_allocation <- read_excel("data/HODP_project.xlsx", 
                                 sheet = "asset_allocation")
 
